@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AlbertCht\\Lumen\\Testing": "src/"
+            "AlbertCht\\Lumen\\Testing\\": "src/"
         }
     }
 }
