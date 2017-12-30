@@ -31,3 +31,50 @@ There are some traits you can use in your test case (including original ones in 
 * `Laravel\Lumen\Testing\WithoutEvents`
 
 > `RefreshDatabase` = `DatabaseMigrations` + `DatabaseTransactions`, so if you use `RefreshDatabase`, you don't need to use the other two traits anymore.
+
+### Response Assertions
+
+Laravel provides a variety of custom assertion methods for your [PHPUnit](https://phpunit.de/) tests. These assertions may be accessed on the response that is returned from the `json`, `get`, `post`, `put`, and `delete` test methods:
+
+Method  | Description
+------------- | -------------
+`$response->assertSuccessful();`  |  Assert that the response has a successful status code.
+`$response->assertStatus($code);`  |  Assert that the response has a given code.
+`$response->assertRedirect($uri);`  |  Assert that the response is a redirect to a given URI.
+`$response->assertHeader($headerName, $value = null);`  |  Assert that the given header is present on the response.
+`$response->assertCookie($cookieName, $value = null);`  |  Assert that the response contains the given cookie.
+`$response->assertPlainCookie($cookieName, $value = null);`  |  Assert that the response contains the given cookie (unencrypted).
+`$response->assertCookieExpired($cookieName);`  |  Assert that the response contains the given cookie and it is expired.
+`$response->assertCookieMissing($cookieName);`  |  Assert that the response does not contains the given cookie.
+`$response->assertJson(array $data);`  |  Assert that the response contains the given JSON data.
+`$response->assertJsonCount(int $count, $key = null);`  |  Assert that the response JSON has the expected count of items at the given key.
+`$response->assertJsonFragment(array $data);`  |  Assert that the response contains the given JSON fragment.
+`$response->assertJsonMissing(array $data);`  |  Assert that the response does not contain the given JSON fragment.
+`$response->assertJsonMissingExact(array $data);`  |  Assert that the response does not contain the exact JSON fragment.
+`$response->assertExactJson(array $data);`  |  Assert that the response contains an exact match of the given JSON data.
+`$response->assertJsonStructure(array $structure);`  |  Assert that the response has a given JSON structure.
+`$response->assertJsonValidationErrors($keys);`  |  Assert that the response has the given JSON validation errors for the given keys.
+`$response->assertViewIs($value);`  |  Assert that the given view was returned by the route.
+`$response->assertViewHas($key, $value = null);`  |  Assert that the response view was given a piece of data.
+`$response->assertViewHasAll(array $data);`  |  Assert that the response view has a given list of data.
+`$response->assertViewMissing($key);`  |  Assert that the response view is missing a piece of bound data.
+`$response->assertSee($value);`  |  Assert that the given string is contained within the response.
+`$response->assertDontSee($value);`  |  Assert that the given string is not contained within the response.
+`$response->assertSeeText($value);`  |  Assert that the given string is contained within the response text.
+`$response->assertDontSeeText($value);`  |  Assert that the given string is not contained within the response text.
+
+### Authentication Assertions
+
+Laravel also provides a variety of authentication related assertions for your [PHPUnit](https://phpunit.de/) tests:
+
+Method  | Description
+------------- | -------------
+`$this->assertAuthenticated($guard = null);`  |  Assert that the user is authenticated.
+`$this->assertGuest($guard = null);`  |  Assert that the user is not authenticated.
+`$this->assertAuthenticatedAs($user, $guard = null);`  |  Assert that the given user is authenticated.
+`$this->assertCredentials(array $credentials, $guard = null);`  |  Assert that the given credentials are valid.
+`$this->assertInvalidCredentials(array $credentials, $guard = null);`  |  Assert that the given credentials are invalid.
+
+### Reference
+
+See full document at Laravel's doc: https://laravel.com/docs/5.5/http-tests
