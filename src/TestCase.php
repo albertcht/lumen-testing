@@ -48,7 +48,7 @@ abstract class TestCase extends LumenTestCase
      */
     public function createApplication()
     {
-        return require __DIR__.'/../bootstrap/app.php';
+        return require base_path('bootstrap/app.php');
     }
 
     /**
