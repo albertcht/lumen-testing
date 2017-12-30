@@ -75,6 +75,19 @@ Method  | Description
 `$this->assertCredentials(array $credentials, $guard = null);`  |  Assert that the given credentials are valid.
 `$this->assertInvalidCredentials(array $credentials, $guard = null);`  |  Assert that the given credentials are invalid.
 
+## Database Assertions
+
+Laravel provides several database assertions for your [PHPUnit](https://phpunit.de/) tests:
+
+Method  | Description
+------------- | -------------
+`$this->assertDatabaseHas($table, array $data);`  |  Assert that a table in the database contains the given data.
+`$this->assertDatabaseMissing($table, array $data);`  |  Assert that a table in the database does not contain the given data.
+`$this->assertSoftDeleted($table, array $data);`  |  Assert that the given record has been soft deleted.
+
 ### Reference
 
-See full document at Laravel's doc: https://laravel.com/docs/5.5/http-tests
+See full document at Laravel's doc:
+
+* https://laravel.com/docs/5.5/http-tests
+* https://laravel.com/docs/5.5/database-testing
