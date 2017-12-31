@@ -4,20 +4,15 @@ namespace AlbertCht\Lumen\Testing;
 
 use Illuminate\Http\Request;
 use Laravel\Lumen\Testing\TestCase as LumenTestCase;
-use AlbertCht\Lumen\Testing\Concerns\InteractsWithAuthentication;
-use AlbertCht\Lumen\Testing\Concerns\InteractsWithDatabase;
-use AlbertCht\Lumen\Testing\Concerns\InteractsWithExceptionHandling;
-use AlbertCht\Lumen\Testing\Concerns\MakesHttpRequests;
-use AlbertCht\Lumen\Testing\Concerns\MocksApplicationServices;
 use AlbertCht\Lumen\Testing\Concerns\RefreshDatabase;
 
 abstract class TestCase extends LumenTestCase
 {
-    use MakesHttpRequests,
-        InteractsWithDatabase,
-        InteractsWithExceptionHandling,
-        InteractsWithAuthentication,
-        MocksApplicationServices;
+    use Concerns\MakesHttpRequests,
+        Concerns\InteractsWithDatabase,
+        Concerns\InteractsWithExceptionHandling,
+        Concerns\InteractsWithAuthentication,
+        Concerns\MocksApplicationServices;
 
     /**
      * Setup the test environment.

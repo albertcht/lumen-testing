@@ -347,6 +347,23 @@ trait MakesHttpRequests
     }
 
     /**
+     * Call the given HTTPS URI and return the Response.
+     *
+     * @param  string  $method
+     * @param  string  $uri
+     * @param  array   $parameters
+     * @param  array   $files
+     * @param  array   $server
+     * @param  string  $content
+     * @return \Illuminate\Http\Response
+     */
+    public function callSecure($method, $uri, $parameters = [], $files = [], $server = [], $content = null)
+    {
+        $uri = 'https://localhost/'.ltrim($uri, '/');
+        return $this->call($method, $uri, $parameters, $files, $server, $content);
+    }
+
+    /**
      * Turn the given URI into a fully qualified URL.
      *
      * @param  string  $uri

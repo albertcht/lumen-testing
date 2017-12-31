@@ -1,6 +1,6 @@
 <?php
 
-namespace AlbertCht\Lumen\Testing\Concerns;;
+namespace AlbertCht\Lumen\Testing\Concerns;
 
 use Illuminate\Redis\RedisManager;
 

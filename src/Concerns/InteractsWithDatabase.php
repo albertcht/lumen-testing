@@ -29,7 +29,7 @@ trait InteractsWithDatabase
      */
     protected function assertDatabaseMissing($table, array $data, $connection = null)
     {
-        return $this->notSeeInDatabase($table, $data, $onConnection);
+        return $this->notSeeInDatabase($table, $data, $connection);
     }
 
     /**
