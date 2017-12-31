@@ -9,6 +9,11 @@ Lumen Testing
 
 A testing suite for Lumen like Laravel does.
 
+### Requirements
+
+* \>= PHP 7.0
+* \>= Lumen 5.3
+
 ### Installation
 
 ```
