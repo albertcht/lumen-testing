@@ -1,6 +1,6 @@
 Lumen Testing
 ==========
-![php-badge](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg)
+![php-badge](https://img.shields.io/packagist/php-v/albertcht/lumen-testing.svg)
 [![packagist-badge](https://img.shields.io/packagist/v/albertcht/lumen-testing.svg)](https://packagist.org/packages/albertcht/lumen-testing)
 [![Total Downloads](https://poser.pugx.org/albertcht/lumen-testing/downloads)](https://packagist.org/packages/albertcht/lumen-testing)
 
