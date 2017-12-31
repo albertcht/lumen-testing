@@ -7,7 +7,7 @@ Lumen Testing
 
 ## Description
 
-A Testing Suite For Lumen like Laravel does.
+A testing suite for Lumen like Laravel does.
 
 ### Installation
 
