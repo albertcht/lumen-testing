@@ -3,6 +3,7 @@ Lumen Testing
 ![php-badge](https://img.shields.io/packagist/php-v/albertcht/lumen-testing.svg)
 [![packagist-badge](https://img.shields.io/packagist/v/albertcht/lumen-testing.svg)](https://packagist.org/packages/albertcht/lumen-testing)
 [![Total Downloads](https://poser.pugx.org/albertcht/lumen-testing/downloads)](https://packagist.org/packages/albertcht/lumen-testing)
+[![travis-badge](https://api.travis-ci.org/albertcht/lumen-testing.svg?branch=master)](https://travis-ci.org/albertcht/lumen-testing)
 
 ## Description
 
