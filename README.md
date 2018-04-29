@@ -97,3 +97,8 @@ See full document at Laravel's doc:
 
 * https://laravel.com/docs/5.5/http-tests
 * https://laravel.com/docs/5.5/database-testing
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/albertcht/lumen-testing/badge.svg?style=beer-square)](https://beerpay.io/albertcht/lumen-testing)  [![Beerpay](https://beerpay.io/albertcht/lumen-testing/make-wish.svg?style=flat-square)](https://beerpay.io/albertcht/lumen-testing?focus=wish)
