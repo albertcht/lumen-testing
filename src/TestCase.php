@@ -28,16 +28,6 @@ abstract class TestCase extends LumenTestCase
     }
 
     /**
-     * Clean up the testing environment before the next test.
-     *
-     * @return void
-     */
-    public function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * Creates the application.
      *
      * @return \Laravel\Lumen\Application
