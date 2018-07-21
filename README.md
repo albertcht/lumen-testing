@@ -47,10 +47,12 @@ Method  | Description
 `$response->assertSuccessful();`  |  Assert that the response has a successful status code.
 `$response->assertStatus($code);`  |  Assert that the response has a given code.
 `$response->assertRedirect($uri);`  |  Assert that the response is a redirect to a given URI.
-`$response->assertHeader($headerName, $value = null);`  |  Assert that the given header is present on the response.
+`$response->assertHeader($headerName, $value = null);`  |  Assert that the given header is not present on the response.
+`$response->assertHeaderMissing($headerName);`  |  Assert that the given header is present on the response.
 `$response->assertCookie($cookieName, $value = null);`  |  Assert that the response contains the given cookie.
 `$response->assertPlainCookie($cookieName, $value = null);`  |  Assert that the response contains the given cookie (unencrypted).
 `$response->assertCookieExpired($cookieName);`  |  Assert that the response contains the given cookie and it is expired.
+`$response->assertCookieNotExpired($cookieName);`  |  Assert that the response contains the given cookie and it is not expired.
 `$response->assertCookieMissing($cookieName);`  |  Assert that the response does not contains the given cookie.
 `$response->assertJson(array $data);`  |  Assert that the response contains the given JSON data.
 `$response->assertJsonCount(int $count, $key = null);`  |  Assert that the response JSON has the expected count of items at the given key.
@@ -68,6 +70,8 @@ Method  | Description
 `$response->assertDontSee($value);`  |  Assert that the given string is not contained within the response.
 `$response->assertSeeText($value);`  |  Assert that the given string is contained within the response text.
 `$response->assertDontSeeText($value);`  |  Assert that the given string is not contained within the response text.
+`$response->assertSeeInOrder(array $values);`  |  Assert that the given strings are contained in order within the response.
+`$response->assertSeeTextInOrder(array $values);`  |  Assert that the given strings are contained in order within the response text.
 
 ### Authentication Assertions
 
@@ -95,8 +99,8 @@ Method  | Description
 
 See full document at Laravel's doc:
 
-* https://laravel.com/docs/5.5/http-tests
-* https://laravel.com/docs/5.5/database-testing
+* https://laravel.com/docs/5.6/http-tests
+* https://laravel.com/docs/5.6/database-testing
 
 ## Support on Beerpay
 Hey dude! Help me out for a couple of :beers:!
