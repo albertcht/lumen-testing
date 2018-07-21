@@ -14,6 +14,8 @@ abstract class TestCase extends LumenTestCase
         Concerns\InteractsWithAuthentication,
         Concerns\MocksApplicationServices;
 
+    static protected $appPath;
+
     /**
      * Setup the test environment.
      *
@@ -22,7 +24,6 @@ abstract class TestCase extends LumenTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->refreshApplication();
         $this->appendTraits();
     }
 
@@ -43,7 +44,7 @@ abstract class TestCase extends LumenTestCase
      */
     public function createApplication()
     {
-        return require base_path('bootstrap/app.php');
+        return require $this->getAppPath();
     }
 
     /**
@@ -60,5 +61,17 @@ abstract class TestCase extends LumenTestCase
         }
     }
 
+    /**
+     * Get the path of lumen application.
+     *
+     * @return string
+     */
+    protected function getAppPath()
+    {
+        if (is_null(static::$appPath)) {
+            return static::$appPath = base_path('bootstrap/app.php');
+        }
 
+        return static::$appPath;
+    }
 }
