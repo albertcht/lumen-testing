@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.0",
         "laravel/lumen-framework": "5.3.*|5.4.*|5.5.*|5.6.*"
 
     },
