@@ -48,7 +48,7 @@ class SoftDeletedInDatabase extends Constraint
      * @param  string  $table
      * @return bool
      */
-    public function matches($table)
+    public function matches($table): bool
     {
         return $this->database->table($table)
                 ->where($this->data)->whereNotNull('deleted_at')->count() > 0;
@@ -60,7 +60,7 @@ class SoftDeletedInDatabase extends Constraint
      * @param  string  $table
      * @return string
      */
-    public function failureDescription($table)
+    public function failureDescription($table): string
     {
         return sprintf(
             "any soft deleted row in the table [%s] matches the attributes %s.\n\n%s",
@@ -74,7 +74,7 @@ class SoftDeletedInDatabase extends Constraint
      * @param  string  $table
      * @return string
      */
-    protected function getAdditionalInfo($table)
+    protected function getAdditionalInfo($table): string
     {
         $results = $this->database->table($table)->get();
 
