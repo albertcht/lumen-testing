@@ -96,7 +96,7 @@ class SoftDeletedInDatabase extends Constraint
      *
      * @return string
      */
-    public function toString()
+    public function toString(): string
     {
         return json_encode($this->data);
     }
