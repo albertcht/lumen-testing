@@ -376,7 +376,7 @@ trait MakesHttpRequests
         }
 
         if (! Str::startsWith($uri, 'http')) {
-            $uri = config('app.url').'/'.$uri;
+            $uri = $this->baseUrl.'/'.$uri;
         }
 
         return trim($uri, '/');
