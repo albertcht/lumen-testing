@@ -14,14 +14,14 @@ abstract class TestCase extends LumenTestCase
         Concerns\InteractsWithAuthentication,
         Concerns\MocksApplicationServices;
 
-    static protected $appPath;
+    protected static $appPath;
 
     /**
      * Setup the test environment.
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->appendTraits();
