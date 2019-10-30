@@ -17,4 +17,16 @@ trait InteractsWithConsole
     {
         return $this->app[Kernel::class]->call($command, $parameters);
     }
+
+    /**
+     * Disable mocking the console output.
+     *
+     * @return $this
+     */
+    protected function withoutMockingConsoleOutput()
+    {
+        $this->mockConsoleOutput = false;
+        $this->app->offsetUnset(OutputStyle::class);
+        return $this;
+    }
 }
