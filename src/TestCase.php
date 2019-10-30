@@ -9,9 +9,11 @@ use AlbertCht\Lumen\Testing\Concerns\RefreshDatabase;
 abstract class TestCase extends LumenTestCase
 {
     use Concerns\MakesHttpRequests,
+        Concerns\InteractsWithAuthentication,
+        Concerns\InteractsWithConsole,
+        Concerns\InteractsWithContainer,
         Concerns\InteractsWithDatabase,
         Concerns\InteractsWithExceptionHandling,
-        Concerns\InteractsWithAuthentication,
         Concerns\MocksApplicationServices;
 
     protected static $appPath;
