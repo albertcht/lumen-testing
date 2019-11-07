@@ -2,7 +2,6 @@
 
 namespace AlbertCht\Lumen\Testing;
 
-use AlbertCht\Lumen\Testing\Concerns\WithoutExceptionHandling;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Testing\TestCase as LumenTestCase;
 use AlbertCht\Lumen\Testing\Concerns\RefreshDatabase;
@@ -15,8 +14,7 @@ abstract class TestCase extends LumenTestCase
         Concerns\InteractsWithContainer,
         Concerns\InteractsWithDatabase,
         Concerns\InteractsWithExceptionHandling,
-        Concerns\MocksApplicationServices,
-        WithoutExceptionHandling;
+        Concerns\MocksApplicationServices;
 
     protected static $appPath;
 
