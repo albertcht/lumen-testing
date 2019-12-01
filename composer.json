@@ -1,5 +1,5 @@
 {
-    "name": "albertcht/lumen-testing",
+    "name": "unicorn/lumen-testing",
     "description": "Testing Suite For Lumen like Laravel does.",
     "keywords": ["phpunit", "test", "lumen", "testing", "laravel", "laravel"],
     "license": "MIT",
@@ -10,7 +10,6 @@
     "require": {
         "php": "^7.1",
         "laravel/lumen-framework": "~5.3|~6.0"
-
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0",
