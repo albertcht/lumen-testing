@@ -73,6 +73,29 @@ trait MocksApplicationServices
     }
 
     /**
+     * Specify a list of jobs that should be dispatched for the given operation.
+     *
+     * These jobs will be mocked, so that handlers will not actually be executed.
+     *
+     * @param  array|string  $jobs
+     * @return $this
+     */
+    protected function expectsJobs($jobs)
+    {
+        $jobs = is_array($jobs) ? $jobs : func_get_args();
+        $this->withoutJobs();
+        $this->beforeApplicationDestroyed(function () use ($jobs) {
+            $dispatched = $this->getDispatchedJobs($jobs);
+            if ($jobsNotDispatched = array_diff($jobs, $dispatched)) {
+                throw new Exception(
+                    'These expected jobs were not dispatched: ['.implode(', ', $jobsNotDispatched).']'
+                );
+            }
+        });
+        return $this;
+    }
+
+    /**
      * Specify a list of jobs that should not be dispatched for the given operation.
      *
      * These jobs will be mocked, so that handlers will not actually be executed.
@@ -93,6 +116,23 @@ trait MocksApplicationServices
             );
         });
 
+        return $this;
+    }
+
+    /**
+     * Mock the job dispatcher so all jobs are silenced and collected.
+     *
+     * @return $this
+     */
+    protected function withoutJobs()
+    {
+        $mock = Mockery::mock('Illuminate\Contracts\Bus\Dispatcher');
+        $mock->shouldReceive('dispatch')->andReturnUsing(function ($dispatched) {
+            $this->dispatchedJobs[] = $dispatched;
+        });
+        $this->app->instance(
+            'Illuminate\Contracts\Bus\Dispatcher', $mock
+        );
         return $this;
     }
 

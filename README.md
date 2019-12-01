@@ -31,6 +31,8 @@ There are some traits you can use in your test case (including original ones in 
 * `AlbertCht\Lumen\Testing\Concerns\RefreshDatabase`
 * `AlbertCht\Lumen\Testing\Concerns\WithFaker`
 * `AlbertCht\Lumen\Testing\Concerns\InteractsWithRedis`
+* `AlbertCht\Lumen\Testing\Concerns\InteractsWithConsole`
+* `AlbertCht\Lumen\Testing\Concerns\InteractsWithContainer`
 * `Laravel\Lumen\Testing\DatabaseMigrations`
 * `Laravel\Lumen\Testing\DatabaseTransactions`
 * `Laravel\Lumen\Testing\WithoutMiddleware`

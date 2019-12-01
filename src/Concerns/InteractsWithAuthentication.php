@@ -100,6 +100,18 @@ trait InteractsWithAuthentication
     }
 
     /**
+     * Set the currently logged in user for the application.
+     *
+     * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @param  string|null  $driver
+     * @return void
+     */
+    public function be($user, $driver = null)
+    {
+        $this->app['auth']->guard($driver)->setUser($user);
+    }
+
+    /**
      * Return true if the credentials are valid, false otherwise.
      *
      * @param  array  $credentials
