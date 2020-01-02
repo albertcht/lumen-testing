@@ -106,7 +106,7 @@ trait InteractsWithAuthentication
      * @param  string|null  $driver
      * @return void
      */
-    public function be($user, $driver = null)
+    public function be(\Illuminate\Contracts\Auth\Authenticatable $user, $driver = null)
     {
         $this->app['auth']->guard($driver)->setUser($user);
     }
