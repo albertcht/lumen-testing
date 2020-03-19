@@ -7,3 +7,4 @@ lumen.log
 tmp[a-zA-Z0-9]{6,99}
 Vagrantfile
 .vagrant/
+.phpunit.result.cache
