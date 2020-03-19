@@ -1,5 +1,5 @@
 {
-    "name": "unicorn/lumen-testing",
+    "name": "albertcht/lumen-testing",
     "description": "Testing Suite For Lumen like Laravel does.",
     "keywords": ["phpunit", "test", "lumen", "testing", "laravel", "laravel"],
     "license": "MIT",
